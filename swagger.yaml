@@ -1,0 +1,27 @@
+openapi: 3.0.0
+info:
+  title: Google Slides API
+  version: 1.0.0
+paths:
+  /slides:
+    get:
+      summary: Retrieve slide information
+      operationId: getSlides
+      responses:
+        '200':
+          description: A JSON array of slide information
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    slide_number:
+                      type: integer
+                      example: 1
+                    elements:
+                      type: integer
+                      example: 5
+servers:
+  - url: http://127.0.0.1:5000
